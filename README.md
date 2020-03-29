@@ -3,4 +3,4 @@ In this project, I've created a blog site in which any user can create, edit or 
 
 Also please make sure to setup a virtual environment with sqlalchemy to store all user's data.
 
-Enjoy!
+Happy coding!
