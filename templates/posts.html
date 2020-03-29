@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+<title>Posts</title>
+{% endblock %}
+{% block body %}
+<br>
+<div>
+        <h3 style="display: inline;"> <strong> All Posts:</strong></h3>
+        <a style="display: inline;" href="/posts/new" class="btn btn-success float-right">+ New Post</a>
+</div>
+<hr>
+{% for post in posts %}
+<br>
+<!-- looping through dictionary-->
+<h2>{{post.title}}</h2>
+{% if post.author %}
+<small>Written by {{post.author }} on {{post.date_created }}</small>
+
+{% else %}
+<small>Written by: Unknown on {{post.date_created }}</small>
+{% endif %}
+<br>
+<br>
+<p style="white-space: pre-wrap">{{post.content}}<p>
+
+                <a class="btn btn-danger" href="/posts/delete/{{post.id}}">Delete</a>
+                <a class="btn btn-primary" href="/posts/edit/{{post.id}}">Edit</a>
+                <br>
+                <hr>
+                {% endfor %}
+
+                {% endblock %}
